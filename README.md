@@ -16,7 +16,7 @@ local Example = set("example")
 Example:create(function(self, data) end)
 ```
 
-This matches `POST /example` and reads data to `self.data`.
+This matches `POST /example` and reads data to `data`.
 
 ### Read
 
@@ -32,7 +32,7 @@ This matches `GET /example/1`.
 Example:update(function(self, id, data) end)
 ```
 
-This matches `PATCH /example/1` and reads data to `self.data`.
+This matches `PATCH /example/1` and reads data to `data`.
 
 ### Delete
 
