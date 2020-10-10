@@ -13,7 +13,7 @@ local Example = set("example")
 ### Create
 
 ```lua
-example:create(function(self, data) end)
+Example:create(function(self, data) end)
 ```
 
 This matches `POST /example` and reads data to `self.data`.
@@ -21,7 +21,7 @@ This matches `POST /example` and reads data to `self.data`.
 ### Read
 
 ```lua
-example:read(function(self, id) end)
+Example:read(function(self, id) end)
 ```
 
 This matches `GET /example/1`.
@@ -29,7 +29,7 @@ This matches `GET /example/1`.
 ### Update
 
 ```lua
-example:update(function(self, id, data) end)
+Example:update(function(self, id, data) end)
 ```
 
 This matches `PATCH /example/1` and reads data to `self.data`.
@@ -37,7 +37,7 @@ This matches `PATCH /example/1` and reads data to `self.data`.
 ### Delete
 
 ```lua
-example:delete(function(self, id) end)
+Example:delete(function(self, id) end)
 ```
 
 And this matches `DELETE /example/1`.
@@ -45,7 +45,7 @@ And this matches `DELETE /example/1`.
 ## Routes
 
 ```lua
-example:route('get', '/example/:id', function(self)
+Example:route('get', '/example/:id', function(self)
   local id = tonumber(http:stash("id"))
   if not id then return self.error(400, "http.bad_request") end
   return {}
